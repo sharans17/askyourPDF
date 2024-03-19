@@ -54,7 +54,6 @@ def file_setup(path):
     else:
         with st.spinner("CUTTING DOWN DOCUMENTS"):
             while count > 1200:
-                print(count)
                 summary_docs = splitted_docs[:decrease]
                 count = llm.get_num_tokens(" ".join([i.page_content for i in summary_docs]))
                 decrease-= 1
